@@ -56,7 +56,8 @@ def custom_round(value):
 
 def min_max_scaling(value, min_val, max_val, min_scale, max_scale):
     scaled_value = (value - min_val) / (max_val - min_val) * (max_scale - min_scale) + min_scale
-    return custom_round(scaled_value)
+    #return custom_round(scaled_value)
+    return scaled_value
 
 # Scaled relevance values
 scaled_relevance = [min_max_scaling(value, min_relevance, max_relevance, 0, 1) for value in relevance_values]
