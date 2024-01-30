@@ -29,7 +29,12 @@ def load_docs(folder_path):
             documents[doc_id] = content
     return documents
 
-docs_folder_path = "docs"
+from google.colab import drive
+import os
+drive.mount('/content/drive', force_remount = True)
+docs_folder_path = '/content/drive/MyDrive/docs'
+
+#docs_folder_path = "docs"
 documents = load_docs(docs_folder_path)
 #print(documents['01239'])
 
