@@ -22,7 +22,7 @@ with open(file_path, 'r') as file:
             elif parts[0] == 'RD':
                 # Add doc_id and score to the current query
                 for i in range(1, len(parts), 2):
-                    doc_id = parts[i]
+                    doc_id = int(parts[i])
                     score = float(parts[i + 1])
                     queries_data[current_query_id]['scores'][doc_id] = score
             elif line.startswith(' '):
