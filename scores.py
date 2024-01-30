@@ -1,6 +1,7 @@
 import math
 
-file_path = r'C:\Users\IOANNA\Desktop\IR\cfquery_detailed'
+#file_path = r'C:\Users\IOANNA\Desktop\IR\cfquery_detailed'
+file_path = "cfquery_detailed"
 
 # Dictionary to store the information
 queries_data = {}
