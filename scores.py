@@ -26,7 +26,8 @@ def read_query_file(file_path):
                     numbers = [int(num) for num in line.split()]
                     for i in range(0, len(numbers), 2):
                         queries_data[current_query_id]['scores'][numbers[i]] = numbers[i + 1]
-
+    return queries_data
+    
 # Keep top 5 for each query
 def keep_top_5(queries_data):
     rankings = []
