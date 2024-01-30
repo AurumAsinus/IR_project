@@ -8,7 +8,7 @@ from nltk.corpus import stopwords
 import nltk
 import pandas as pd
 import os
-#nltk.download('stopwords')
+nltk.download('stopwords')
 
 # Define stop words
 stop_words = set(stopwords.words('english'))
