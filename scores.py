@@ -67,7 +67,7 @@ def scale_relevance_values(relevance_values):
     scaled_relevance = [min_max_scaling(value, min_relevance, max_relevance, 0, 4) for value in relevance_values]
     return scaled_relevance
 
-def scaled_dict(queries_data):
+def scale_dict(queries_data):
     min_relevance = min(relevance_values)
     max_relevance = max(relevance_values)
     scaled_dict = {
