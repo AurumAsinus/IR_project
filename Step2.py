@@ -14,7 +14,7 @@ nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 # Load queries from TSV file
-query_file_path = r"C:\Users\IOANNA\Desktop\IR\queries.tsv"
+query_file_path = "queries.tsv"
 queries = pd.read_csv(query_file_path, sep='\t')
 queries = list(queries['Query'])
 #print(queries)
@@ -29,7 +29,7 @@ def load_docs(folder_path):
             documents[doc_id] = content
     return documents
 
-docs_folder_path = r"C:\Users\IOANNA\Desktop\IR\docs"
+docs_folder_path = "docs"
 documents = load_docs(docs_folder_path)
 #print(documents['01239'])
 
