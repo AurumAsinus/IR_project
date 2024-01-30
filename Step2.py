@@ -215,10 +215,10 @@ def main():
         for rank, (doc_id, score) in enumerate(top_5, start=1):
             rankings[i-1].append((doc_id, rank, score))
 
-    for i, query_rankings in enumerate(rankings, start=1):
-        print(f"\nQuery {i} Rankings:")
-        for doc_id, rank, score in query_rankings:
-            print(f"Doc ID: {doc_id}, Rank: {rank}, Score: {score}")
+    # for i, query_rankings in enumerate(rankings, start=1):
+    #     print(f"\nQuery {i} Rankings:")
+    #     for doc_id, rank, score in query_rankings:
+    #         print(f"Doc ID: {doc_id}, Rank: {rank}, Score: {score}")
     print("\nResult Dictionary:")
     print(result_dict)
     
