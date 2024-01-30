@@ -5,6 +5,7 @@
 import numpy as  np
 import math
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 import nltk
 import pandas as pd
 import os
@@ -12,7 +13,7 @@ nltk.download('stopwords')
 
 # Define stop words
 stop_words = set(stopwords.words('english'))
-
+porter = PorterStemmer()
 # Load queries from TSV file
 query_file_path = "queries.tsv"
 queries = pd.read_csv(query_file_path, sep='\t')
@@ -44,7 +45,7 @@ def tfij(docs):
     tfij_vectors = []
     for doc in docs.values():
         # Tokenize document and remove stop words
-        terms = [term for term in doc.lower().split() if term not in stop_words]
+        terms = [porter.stem(term) for term in doc.lower().split() if term not in stop_words]
         #print(terms)
         # Calculate TFij for each term in the doc
         tfij_vector = {}
