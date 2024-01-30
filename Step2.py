@@ -190,7 +190,7 @@ def main():
     # print("\nTF-IDF Vectors:")
     # print(tfidf_vectors)
 
-
+    result_dict = {}
     # Query Vectors
     max_vector_length = max(len(tfidf_vector) for tfidf_vector in tfidf_vectors)
     
@@ -210,6 +210,7 @@ def main():
                 #print(f"\nSimilarity with Doc {doc_id} for Query {i}: {similarity}")
         similarities.sort(key=lambda x: x[1], reverse=True)
         top_5 = similarities[:5]
+        result_dict[f"{i:05d}"] = {doc_id: score for doc_id, score in similarities}
 
         for rank, (doc_id, score) in enumerate(top_5, start=1):
             rankings[i-1].append((doc_id, rank, score))
@@ -218,6 +219,8 @@ def main():
         print(f"\nQuery {i} Rankings:")
         for doc_id, rank, score in query_rankings:
             print(f"Doc ID: {doc_id}, Rank: {rank}, Score: {score}")
+    print("\nResult Dictionary:")
+    print(resulat_dict)
     
 if __name__ == "__main__":
     main()
