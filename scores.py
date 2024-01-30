@@ -1,7 +1,7 @@
 import math
 
 # Read query file and organize data
-def read_query_file(gile_path):
+def read_query_file(file_path):
     queries_data = {}
 
     # Read the file and organize the data
@@ -96,7 +96,7 @@ def main():
     scaled_relevance = scale_relevance_values(relevance_values)
 
     # Scaled dictionary
-    scaled_dict = scale_dictionary(queries_data)
+    scaled_dict = scale_dict(queries_data)
 
 if __name__ == "__main__":
     main()
