@@ -220,7 +220,7 @@ def main():
         for doc_id, rank, score in query_rankings:
             print(f"Doc ID: {doc_id}, Rank: {rank}, Score: {score}")
     print("\nResult Dictionary:")
-    print(resulat_dict)
+    print(result_dict)
     
 if __name__ == "__main__":
     main()
