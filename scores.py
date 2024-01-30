@@ -59,11 +59,11 @@ def min_max_scaling(value, min_val, max_val, min_scale, max_scale):
     return custom_round(scaled_value)
 
 # Scaled relevance values
-scaled_relevance = [min_max_scaling(value, min_relevance, max_relevance, 0, 4) for value in relevance_values]
+scaled_relevance = [min_max_scaling(value, min_relevance, max_relevance, 0, 1) for value in relevance_values]
 
 scaled_dict = {
     key: {
-        'scores': {sub_key: min_max_scaling(sub_value, min_relevance, max_relevance, 0, 4) for sub_key, sub_value in
+        'scores': {sub_key: min_max_scaling(sub_value, min_relevance, max_relevance, 0, 1) for sub_key, sub_value in
                    sub_dict['scores'].items()}
     }
     for key, sub_dict in queries_data.items()
